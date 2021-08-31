@@ -12,4 +12,3 @@ function reslutionFunction(w , h ){
 }   
 
 reslutionFunction(720, 1020);
-//123
