@@ -1,6 +1,3 @@
-let a ;
-let b ;
-
 function maximumfunction(a , b){
     if ( a > b ){
         console.log(a);
@@ -10,4 +7,4 @@ function maximumfunction(a , b){
     }
 }
 
-maximumfunction(10,15);
+maximumfunction(100,15);
