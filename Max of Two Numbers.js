@@ -1,7 +1,8 @@
-let a ;
-let b ;
+
 
 function maximumfunction(a , b){
+	let a ;
+	let b ;
     if ( a > b ){
         console.log(a);
     }
