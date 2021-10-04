@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>jqury-learn</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-rtl.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      table{
+        width: 1000px;
+        border:1px solid black;
+        margin: 10px auto;
+      }
+      table tr td {
+        border: 1px solid;
+        padding: 5px;
+        font-size: 16px;
+      }
+      table tr td:first-child,table tr td:last-child{
+        text-align: center;
+      }
+      table tr:nth-child(even){
+        background-color: #efefef;
+      }
+    </style>
+  </head>
+  <body>
+       <script>
+          let body = document.body,
+              tbl  = document.createElement('table');
+          fetch('https://jsonplaceholder.typicode.com/todos')
+          .then(response => response.json())
+          .then(data => {
+            for(let i = 0; i < 200; i++){
+                let tr = tbl.insertRow();
+                let td01 = tr.insertCell().innerHTML = data[i]["id"];
+                let td02 = tr.insertCell().innerHTML = data[i]["title"];
+                let td03 = tr.insertCell().innerHTML = data[i]["completed"];
+                //for(let j = 0; j < 3; j++){
+                    //let td = tr.insertCell();
+                    //td.appendChild(document.createTextNode('Cell'));
+                       // 
+                //}
+            }
+            body.appendChild(tbl);
+          }) 
+        </script>
+    <script src="js/init.js"></script>
+  </body>
+</html>
